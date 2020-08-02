@@ -1,7 +1,7 @@
 #background {
     background-image: url('assets/background.jpg');
     height: 800px;
-    width: 1200px;
+    width: 1400px;
 }
 
 #henry {
@@ -10,13 +10,36 @@
     width: 50px;
     position: absolute;
     top: 700px;
-    left: 600px;
+    left: 700px;
 }
 
 #corona {
     background-image: url(assets/corona.png);
-    height: 90px;
-    width: 90px;
+    height: 91px;
+    width: 91px;
     position: absolute;
-    left: 600px;
+    left: 550px;
+    top: 50px;
 }
+
+.corona1 {
+    background-image: url(assets/corona.png);
+    height: 91px;
+    width: 91px;
+    position: absolute;
+}
+
+#start {
+    height: 100px;
+    width: 100px;
+    display: flex;
+ }
+
+ .btn-start {
+     height: 50px;
+     width: 200px;
+     /* align-items: center; */
+     /* justify-content: center; */
+     /* text-align: center; */
+     align-content: center;
+ }
