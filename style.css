@@ -1,6 +1,6 @@
 #background {
     background-image: url('assets/background.jpg');
-    height: 800px;
+    height: 700px;
     width: 1400px;
 }
 
@@ -9,18 +9,18 @@
     height: 50px;
     width: 50px;
     position: absolute;
-    top: 700px;
+    top: 500px;
     left: 700px;
 }
 
-#corona {
+/* #corona {
     background-image: url(assets/corona.png);
     height: 91px;
     width: 91px;
     position: absolute;
     left: 550px;
     top: 50px;
-}
+} */
 
 .corona1 {
     background-image: url(assets/corona.png);
