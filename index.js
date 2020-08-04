@@ -5,16 +5,16 @@ var henryLocation = {
 
 var coronaLocation = [
     {
-        top: 10,
-        left: 10
+        top: 0,
+        left: 0
     }, 
     {
-        top: 30,
-        left: 30
+        top: 0,
+        left: 0
     }, 
     {
-        top: 60,
-        left: 60
+        top: 0,
+        left: 0
     }
     ]
 
@@ -62,12 +62,29 @@ startBtn.addEventListener("click", startMoveCorona)
 // startMoveCorona()
 
 function startMoveCorona () {
+    // const randomTop = Math.floor(Math.random()*600)
+    // const randomLeft = Math.floor(Math.random()*1300)
+    // for (let i = 0; i < coronaLocation.length; i++) {
+    //     coronaLocation[i].top = randomTop
+    //     coronaLocation[i].left = randomLeft
+    //    }
+    setInterval(testCorona, 10)
+
+    function testCorona () {
     const randomTop = Math.floor(Math.random()*600)
     const randomLeft = Math.floor(Math.random()*1300)
     for (let i = 0; i < coronaLocation.length; i++) {
-        coronaLocation[i].top = randomTop
-        coronaLocation[i].left = randomLeft
+        if (coronaLocation[i].top < 700 && coronaLocation[i].left < 1360) {
+            coronaLocation[i].top++
+            coronaLocation[i].left++
+        } else if (coronaLocation[i].top > 10 && coronaLocation[i].left > 10) {
+            coronaLocation[i].top--
+            coronaLocation[i].left--
+        }
+        console.log(coronaLocation[i].top)
+        console.log(coronaLocation[i].left)
        }
+    }
 }
 
 function gameLoop () {
