@@ -5,16 +5,16 @@ var henryLocation = {
 
 var coronaLocation = [
     {
-        top: 50,
-        left: 600
+        top: 10,
+        left: 10
     }, 
     {
-        top: 50,
-        left: 700
+        top: 30,
+        left: 30
     }, 
     {
-        top: 50,
-        left: 800
+        top: 60,
+        left: 60
     }
     ]
 
@@ -48,30 +48,26 @@ function locateCorona () {
 const startBtn = document.getElementById('btn-start')
 startBtn.addEventListener("click", startMoveCorona)
 
-function startMoveCorona () {
-    // const randomLocation = []
-    // const randomTop = Math.floor(Math.random()*700)
-    // const randomLeft = Math.floor(Math.random()*1400)
-    // randomLocation.push(newVirusLocation)
-    // function newVirusLocation () {
-    //     const newLocation = {
-    //         top: randomTop,
-    //         left: randomLeft
-    //     }
-    // }
-    const coronaVirus = document.getElementsByClassName('corona1')
-    const animate = setInterval(moveFunc, 2000)
+// function startMoveCorona () {
+//   for (let i = 0; i < coronaLocation.length; i++) {
+//   if (coronaLocation[i].top > 10 && coronaLocation[i].top < 700) {
+//       coronaLocation[i].top++
+//   } else if (coronaLocation[i].left > 10 && coronaLocation[i].left < 1360) {
+//       coronaLocation[i].left++
+//   }
+//   console.log(coronaLocation[i].top)
+//   console.log(coronaLocation[i].left)
+// }
+// }
+// startMoveCorona()
 
-    function moveFunc () {
-        for (let i = 0; i < coronaLocation.length; i++) {
-            if (coronaLocation[i].top == 10 || 700) {
-                clearInterval(animate)
-            } else {
-                coronaLocation[i].top++
-                coronaVirus.style.top = coronaLocation[i].top + 'px'
-            }
-        }
-    }
+function startMoveCorona () {
+    const randomTop = Math.floor(Math.random()*600)
+    const randomLeft = Math.floor(Math.random()*1300)
+    for (let i = 0; i < coronaLocation.length; i++) {
+        coronaLocation[i].top = randomTop
+        coronaLocation[i].left = randomLeft
+       }
 }
 
 function gameLoop () {
@@ -79,7 +75,7 @@ function gameLoop () {
     // console.log(setTimeout)
     moveHenry()
     locateCorona()
-    // moveCorona()
+    // startMoveCorona()
 }
 
 gameLoop()

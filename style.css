@@ -13,14 +13,9 @@
     left: 700px;
 }
 
-/* #corona {
-    background-image: url(assets/corona.png);
-    height: 91px;
-    width: 91px;
-    position: absolute;
-    left: 550px;
-    top: 50px;
-} */
+#corona {
+    position: relative;
+}
 
 .corona1 {
     background-image: url(assets/corona.png);
