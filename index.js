@@ -3,21 +3,6 @@ var henryLocation = {
     left: 700
 }
 
-var coronaLocation = [
-    {
-        top: 0,
-        left: 100
-    }, 
-    {
-        top: 0,
-        left: 300
-    }, 
-    {
-        top: 0,
-        left: 500
-    }
-    ]
-
 document.onkeydown = function (evt) {
     console.log(evt)
     if (evt.keyCode === 38 && henryLocation.top > 10) {
@@ -38,37 +23,26 @@ function moveHenry () {
     document.getElementById('henry').style.left = henryLocation.left + 'px'
 }
 
-function locateCorona () {
-    document.getElementById('corona').innerHTML = ""
-    for (let i = 0; i < coronaLocation.length; i ++) {
-        document.getElementById('corona').innerHTML += `<div class="corona1" style='top:${coronaLocation[i].top}px; left:${coronaLocation[i].left}px'}}></div>`
-    }
-}
-
 const startBtn = document.getElementById('btn-start')
-startBtn.addEventListener("click", startMoveCorona)
+startBtn.addEventListener("click", startMoveCorona, false)
 
 function startMoveCorona () {
-    setInterval(movingCorona, 1000)
-    function movingCorona () {
-    const randomTop = Math.floor(Math.random()*600)
-    const randomLeft = Math.floor(Math.random()*1300)
-    for (let i = 0; i < coronaLocation.length; i++) {
-        if (coronaLocation[i].top < 700 && coronaLocation[i].left < 1360) {
-            coronaLocation[i].top = randomTop
-            coronaLocation[i].left = randomLeft
-        } else if (coronaLocation[i].top > 10 && coronaLocation[i].left > 10) {
-            coronaLocation[i].top--
-            coronaLocation[i].left--
-        }
-       }
-    }
+    setInterval(constantMove, 1000)
+    
+    function constantMove () {
+    const theCorona = document.getElementById('corona')
+    const w = 1300, h = 600
+
+    theCorona.style.top = Math.floor(Math.random() * h) + 'px'
+    theCorona.style.left = Math.floor(Math.random() * w) + 'px'
 }
+}
+
+
 
 function gameLoop () {
     setTimeout(gameLoop, 1000)
     moveHenry()
-    locateCorona()
 }
 
 gameLoop()
