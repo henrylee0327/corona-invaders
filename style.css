@@ -18,7 +18,23 @@
     height: 91px;
     width: 91px;
     position: absolute;
-    transition: top .5s ease, left .5s ease;
+    transition: top 2s ease, left 2s ease;
+}
+
+#corona1 {
+    background-image: url(assets/corona.png);
+    height: 91px;
+    width: 91px;
+    position: absolute;
+    transition: top 2s ease, left 2s ease;
+}
+
+#corona2 {
+    background-image: url(assets/corona.png);
+    height: 91px;
+    width: 91px;
+    position: absolute;
+    transition: top 2s ease, left 2s ease;
 }
 
 #start {
