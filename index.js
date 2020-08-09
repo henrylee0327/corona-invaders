@@ -23,7 +23,7 @@ function moveHenry () {
 }
 
 const startBtn = document.getElementById('btn-start')
-startBtn.addEventListener("click", theGame, false)
+startBtn.addEventListener("click", theGame)
 
 function theGame () {
     const startGame = setInterval(moveCorona, 1300)
@@ -41,24 +41,42 @@ function theGame () {
     theCorona2.style.top = Math.floor(Math.random() * h) + 'px'
     theCorona2.style.left = Math.floor(Math.random() * w) + 'px'
     
-    function gameOver () {
-        const henry = document.getElementById('henry')
-        const theCorona = document.getElementById('corona')
-        const theCorona1 = document.getElementById('corona1')
-        const theCorona2 = document.getElementById('corona2')
+}
+}
 
-        
+function collisionDetect () {
+    var theHenry = henry.getBoundingClientRect();
+    var theCorona = corona.getBoundingClientRect();
+    
+    // if ((theCorona.top > theHenry.top && theCorona.top < theHenry.bottom) && (theCorona.bottom > theHenry.top && theCorona.bottom < theHenry.bottom)) {
+    //      verticalCollision = true
+    // } else {
+    //      verticalCollision = false
+    // }
+
+    // if ((theCorona.right > theHenry.left && theCorona.right < theHenry.right) && (theCorona.left < theHenry.right && theCorona.left > theHenry.left)) {
+    //      horizontalCollision = true
+    // } else {
+    //      horizontalCollision = false
+    // }
+
+    // if (verticalCollision && horizontalCollision) {
+    //     alert('collision detected')
+    // } else {
+    //     console.log('Game goes on')
+    // }
+    if (theCorona.top > theHenry.bottom || theCorona.right < theHenry.left || theCorona.bottom < theHenry.top || theCorona.left > theHenry.right) {
+        return false
+    } else {
+        alert('game over')
+        return true
     }
-    gameOver()
+        
 }
-}
+collisionDetect()
 
+// function gameLoop () {
+//     setTimeout(gameLoop, 1000)
+// }
 
-
-
-function gameLoop () {
-    setTimeout(gameLoop, 1000)
-    // moveHenry()
-}
-
-gameLoop()
+// gameLoop()
