@@ -26,20 +26,23 @@ document.onkeydown = function (evt) {
     // console.log(evt)
     if (evt.keyCode === 38 && henryLocation.top > 10) {
         henryLocation.top = henryLocation.top - 25
+        moveHenry()
     } else if (evt.keyCode === 40 && henryLocation.top < 700) {
         henryLocation.top = henryLocation.top + 25
+        moveHenry()
     } else if (evt.keyCode === 37 && henryLocation.left > 10) {
         henryLocation.left = henryLocation.left - 25
+        moveHenry()
     } else if (evt.keyCode === 39 && henryLocation.left < 1360) {
         henryLocation.left = henryLocation.left + 25
+        moveHenry()
     } else if (evt.keyCode === 32) {
         missiles.push({
             left: henryLocation.left + 20,
-            top: henryLocation.top - 20
+            top: henryLocation.top - 40
         })
-        drawMissiles()
+        console.log(missiles)
     }
-    moveHenry()
 }
 
 function moveHenry () {
@@ -57,7 +60,7 @@ function drawCorona () {
 function drawMissiles () {
     document.getElementById('missiles').innerHTML = ""
     for (let i = 0; i < missiles.length; i++) {
-        document.getElementById('missiles').innerHTML += `<div class="missile" style=top:${missiles[i].top}px; left:${missiles[i].left}px></div>`
+        document.getElementById('missiles').innerHTML += `<div class="missile" style='top:${missiles[i].top}px; left:${missiles[i].left}px'></div>`
     }
 }
 
