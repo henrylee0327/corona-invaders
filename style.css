@@ -13,15 +13,21 @@
     left: 700px;
 }
 
-#corona {
+.missile {
+    background-image: url(assets/missile1.png);
+    height: 10px;
+    width: 5px;
+    position: absolute;
+}
+
+.corona1 {
     background-image: url(assets/corona.png);
     height: 91px;
     width: 91px;
     position: absolute;
-    transition: top 2s ease, left 2s ease;
 }
 
-#corona1 {
+/* #corona1 {
     background-image: url(assets/corona.png);
     height: 91px;
     width: 91px;
@@ -35,7 +41,7 @@
     width: 91px;
     position: absolute;
     transition: top 2s ease, left 2s ease;
-}
+} */
 
 #start {
     height: 100px;
