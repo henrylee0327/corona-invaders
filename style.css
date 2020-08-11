@@ -1,6 +1,6 @@
 #background {
     background-image: url('assets/background.jpg');
-    height: 700px;
+    height: 800px;
     width: 1400px;
 }
 
@@ -21,6 +21,19 @@
 
 .missile {
     background-image: url(assets/missile1.png);
+    height: 20px;
+    width: 10px;
+    position: absolute;
+}
+
+#coronaMissiles {
+    height: 700px;
+    width: 1400px;
+    position: absolute;
+}
+
+.coronaMissile {
+    background-image: url(assets/missile2.png);
     height: 20px;
     width: 10px;
     position: absolute;
