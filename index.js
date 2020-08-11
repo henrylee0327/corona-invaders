@@ -114,7 +114,11 @@ function collisionDetectMissile1 () {
                 coronaVirus.splice(i, 1)
                 missiles.splice(m, 1)
             }
-        }
+            if (coronaVirus.length == 0) {
+                alert('You win')
+                location.reload()
+            }
+         }
     }
 }
 
@@ -127,6 +131,7 @@ function collisionDetectMissile2 () {
             (coronaMissiles[i].left <= henryLocation.left + 50)
         ) {
             alert('Game over')
+            location.reload()
         }
     }
 }
@@ -139,6 +144,7 @@ function gameLoop () {
     drawMissiles()
     moveMissiles()
     collisionDetectMissile1()
+    collisionDetectMissile2()
     drawCoronaMissiles()
     moveCoronaMissiles()
 }
