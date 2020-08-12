@@ -26,14 +26,7 @@ var missiles = []
 var coronaMissiles = []
 
 document.onkeydown = function (evt) {
-    // console.log(evt)
-    if (evt.keyCode === 38 && henryLocation.top > 10) {
-        henryLocation.top = henryLocation.top - 25
-        moveHenry()
-    } else if (evt.keyCode === 40 && henryLocation.top < 700) {
-        henryLocation.top = henryLocation.top + 25
-        moveHenry()
-    } else if (evt.keyCode === 37 && henryLocation.left > 10) {
+    if (evt.keyCode === 37 && henryLocation.left > 10) {
         henryLocation.left = henryLocation.left - 25
         moveHenry()
     } else if (evt.keyCode === 39 && henryLocation.left < 1360) {
@@ -125,7 +118,7 @@ function collisionDetectMissile1 () {
 function collisionDetectMissile2 () {
     for (let i = 0; i < coronaMissiles.length; i++) {
         if (
-            (coronaMissiles[i].top + 20 >= henryLocation.top) &&
+            (coronaMissiles[i].top + 25 >= henryLocation.top) &&
             (coronaMissiles[i].top <= henryLocation.top) &&
             (coronaMissiles[i].left >= henryLocation.left) &&
             (coronaMissiles[i].left <= henryLocation.left + 50)
@@ -133,6 +126,21 @@ function collisionDetectMissile2 () {
             alert('Game over')
             location.reload()
         }
+    }
+}
+
+function collisionDetectCorona () {
+    for (let i = 0; i < coronaVirus.length; i++) {
+        if (
+            (henryLocation.top <= coronaVirus[i].top + 91) &&
+            (henryLocation.top >= coronaVirus[i].top) &&
+            (henryLocation.left >= coronaVirus[i].left) &&
+            (henryLocation.left <= coronaVirus[i].left + 91)
+            ) 
+            {
+                alert('Game over')
+                location.reload()
+            }
     }
 }
 
@@ -145,6 +153,7 @@ function gameLoop () {
     moveMissiles()
     collisionDetectMissile1()
     collisionDetectMissile2()
+    collisionDetectCorona()
     drawCoronaMissiles()
     moveCoronaMissiles()
 }
