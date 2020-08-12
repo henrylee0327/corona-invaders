@@ -75,7 +75,6 @@ setInterval(selectCoronaFiringMissiles, 2000)
 
 function selectCoronaFiringMissiles () {
     var selectRandomCorona = coronaVirus[Math.floor(Math.random() * coronaVirus.length)]
-    console.log(selectRandomCorona)
     coronaMissiles.push({
         top: selectRandomCorona.top + 91,
         left: selectRandomCorona.left + 45
@@ -144,6 +143,14 @@ function collisionDetectCorona () {
     }
 }
 
+function coronaMissileRemove () {
+    for (let i = 0; i < coronaMissiles.length; i++) {
+        // console.log(coronaMissiles)
+        if (coronaMissiles[i].top + 20 == 800) {
+            coronaMissiles.splice(i, 1)
+        }
+    }
+}
 
 function gameLoop () {
     setTimeout(gameLoop, 300)
@@ -156,6 +163,7 @@ function gameLoop () {
     collisionDetectCorona()
     drawCoronaMissiles()
     moveCoronaMissiles()
+    coronaMissileRemove()
 }
 
 gameLoop()
