@@ -108,7 +108,7 @@ function collisionDetectMissile1 () {
                 missiles.splice(m, 1)
             }
             if (coronaVirus.length == 0) {
-                alert('You win')
+                alert('Congrats! You killed all the viruses!')
                 location.reload()
             }
          }
@@ -123,7 +123,7 @@ function collisionDetectMissile2 () {
             (coronaMissiles[i].left >= henryLocation.left) &&
             (coronaMissiles[i].left <= henryLocation.left + 50)
         ) {
-            alert('Game over')
+            alert('You are infected!')
             location.reload()
         }
     }
@@ -138,13 +138,13 @@ function collisionDetectCorona () {
             (henryLocation.left <= coronaVirus[i].left + 91)
             ) 
             {
-                alert('Game over')
+                alert('You are infected')
                 location.reload()
             }
             console.log(coronaVirus[0].top + 91)
         if (coronaVirus[i].top + 91 === 801) {
             console.log(coronaVirus[i].top + 91)
-            alert('Game over')
+            alert('You are infected')
             location.reload()
         }
     }
