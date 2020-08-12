@@ -140,17 +140,23 @@ function collisionDetectCorona () {
                 alert('Game over')
                 location.reload()
             }
+            console.log(coronaVirus[0].top + 91)
+        if (coronaVirus[i].top + 91 === 801) {
+            console.log(coronaVirus[i].top + 91)
+            alert('Game over')
+            location.reload()
+        }
     }
 }
 
 function coronaMissileRemove () {
     for (let i = 0; i < coronaMissiles.length; i++) {
-        // console.log(coronaMissiles)
         if (coronaMissiles[i].top >= 800) {
             coronaMissiles.splice(i, 1)
         }
     }
 }
+
 
 function gameLoop () {
     setTimeout(gameLoop, 300)
