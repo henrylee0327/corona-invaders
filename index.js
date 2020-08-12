@@ -12,14 +12,15 @@ var coronaVirus = [
     {top: 100, left: 850},
     {top: 100, left: 1000},
     {top: 100, left: 1150},
-    {top: 300, left: 100},
-    {top: 300, left: 250},
-    {top: 300, left: 400},
-    {top: 300, left: 550},
-    {top: 300, left: 700},
-    {top: 300, left: 850},
-    {top: 300, left: 1000},
-    {top: 300, left: 1150}
+    {top: 300, left: 50},
+    {top: 300, left: 200},
+    {top: 300, left: 350},
+    {top: 300, left: 500},
+    {top: 300, left: 650},
+    {top: 300, left: 800},
+    {top: 300, left: 950},
+    {top: 300, left: 1100},
+    {top: 300, left: 1250}
 ]
 
 var missiles = []
