@@ -141,7 +141,6 @@ function collisionDetectCorona () {
                 alert('You are infected')
                 location.reload()
             }
-            console.log(coronaVirus[0].top + 91)
         if (coronaVirus[i].top + 91 === 801) {
             console.log(coronaVirus[i].top + 91)
             alert('You are infected')
