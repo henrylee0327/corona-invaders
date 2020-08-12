@@ -146,7 +146,7 @@ function collisionDetectCorona () {
 function coronaMissileRemove () {
     for (let i = 0; i < coronaMissiles.length; i++) {
         // console.log(coronaMissiles)
-        if (coronaMissiles[i].top + 20 == 800) {
+        if (coronaMissiles[i].top >= 800) {
             coronaMissiles.splice(i, 1)
         }
     }
