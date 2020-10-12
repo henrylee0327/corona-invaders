@@ -33,7 +33,7 @@ Pop-up will show up when you kill all the viruses
 ![Image of youwin](https://github.com/henrylee0327/corona-invaders/blob/master/pictures/youwin.png)
 
 ## You lose
-pop-up will show up when you are lost
+pop-up will show up when you lose
 ![Image of youwin](https://github.com/henrylee0327/corona-invaders/blob/master/pictures/youlost1.png)
 ![Image of youwin](https://github.com/henrylee0327/corona-invaders/blob/master/pictures/youlost2.png)
 ![Image of youwin](https://github.com/henrylee0327/corona-invaders/blob/master/pictures/youlost3.png)
